@@ -122,3 +122,46 @@ Resources created during the lab must be reviewed and removed when no longer req
 Every lab should have an explicit cleanup phase.
 
 Before starting a new AWS lab, verify that resources from previous labs are either intentionally retained or deleted.
+
+## Fleet-Wide Run Command
+
+Successfully executed a single AWS Systems Manager Run Command against both Linux nodes.
+
+Command:
+
+- Document: AWS-RunShellScript
+- Command ID: 8a462e9b-3cff-4c07-a5de-40d5c51ed949
+- Targets: Linux-01 and Linux-02
+- Result: Success on both nodes
+
+The command collected:
+
+- Hostname
+- Private IP address
+- Uptime
+- Operating system
+- Kernel version
+- Memory usage
+- Root filesystem usage
+
+This validated centralized command execution across multiple SSM-managed Linux nodes.
+
+## Current Fleet
+
+| Node | Availability Zone | Private IP | SSM Status |
+|---|---|---|---|
+| Linux-01 | ap-south-1a | 172.31.38.142 | Online |
+| Linux-02 | ap-south-1b | 172.31.3.86 | Online |
+
+## Milestones Completed
+
+- AWS preflight
+- IAM instance role and instance profile
+- Security group without inbound SSH
+- Linux-01 provisioning
+- SSM registration
+- Session Manager access
+- SSM Run Command
+- Linux-02 provisioning
+- Two-node SSM fleet
+- Fleet-wide Run Command
